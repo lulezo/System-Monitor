@@ -118,20 +118,15 @@ long LinuxParser::UpTime() {
 
 // TODO: Read and return CPU utilization
 vector<string> LinuxParser::CpuUtilization() {
-  string line, key, value;
+  string line, cpu, value;
   vector<string> cpudata;
   std::ifstream filestream(kProcDirectory + kStatFilename);
   if (filestream.is_open()) {
-    while (std::getline(filestream, line)) {
-      std::istringstream linestream(line);
-      while (linestream >> key >> value) {
-        if (key == "cpu") {
-          for (int i = 0; i < 10; i++) {
-            linestream >> value;
-            cpudata.push_back(value);
-          }
-        }
-      }
+    std::getline(filestream, line);
+    std::istringstream linestream(line);
+    linestream >> cpu;  
+    while (linestream >> value) {
+      cpudata.push_back(value);
     }
   }
   return cpudata;
