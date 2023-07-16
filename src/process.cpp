@@ -18,7 +18,7 @@ void Process::pidSetter(int i) {
 }
 
 // Return this process's ID
-int Process::Pid() { return return pid_; }
+int Process::Pid() { return pid_; }
 
 // Return this process's CPU utilization
 float Process::CpuUtilization() const {
