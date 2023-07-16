@@ -7,7 +7,7 @@ using std::string;
 // This is a helper function
 // INPUT: Long int measuring seconds
 // OUTPUT: HH:MM:SS
-string Format::ElapsedTime(long seconds) {
+string Format::ElapsedTime(long seconds) { 
   int h, m, s;
   string up_time;
   h = seconds / 3600;
