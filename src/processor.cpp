@@ -1,16 +1,14 @@
+#include "processor.h"
+#include "linux_parser.h"
 #include<string>
 #include<vector>
 #include<istream>
 #include<fstream>
 #include<iostream>
 #include<sstream>
-
-#include "processor.h"
-#include "linux_parser.h"
-
 using std::string;
 
-// Return the aggregate CPU utilization
+// TODO: Return the aggregate CPU utilization
 float Processor::Utilization() {
   string line;
   string cpu;
