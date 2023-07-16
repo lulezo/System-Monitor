@@ -33,14 +33,14 @@ float Processor::Utilization() {
   //output
   float output = (totald - idled) / totald;
   //updating prev.. values
-  double previdle = idle;
-  double previowait = iowait;
-  double prevuser = user;
-  double prevnice = nice;
-  double prevsystem = system;
-  double previrq = irq;
-  double prevsoftirq = softirq;
-  double prevsteal = steal;
+  previdle = idle;
+  previowait = iowait;
+  prevuser = user;
+  prevnice = nice;
+  prevsystem = system;
+  previrq = irq;
+  prevsoftirq = softirq;
+  prevsteal = steal;
   
   return output;
 }
