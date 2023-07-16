@@ -30,8 +30,8 @@ vector<Process>& System::Processes() {
     Process process;
     process.pidSetter(pid);
     processes_.push_back(process);
-    std::sort(processes_.begin(),processes_.end());
   }
+  std::sort(processes_.begin(),processes_.end());
   return processes_;
 }
 
