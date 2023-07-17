@@ -123,8 +123,10 @@ vector<string> LinuxParser::CpuUtilization() {
 
 // TODO: Read and return the total number of processes
 int LinuxParser::TotalProcesses() {
-  string line, key;
-  int value, TotProcesses;
+  string line;
+  string key;
+  int value;
+  int TotProcesses{0};
   std::ifstream filestream(kProcDirectory + kStatFilename);
   if (filestream.is_open()) {
     while (getline(filestream, line)) {
@@ -141,8 +143,10 @@ int LinuxParser::TotalProcesses() {
 
 // TODO: Read and return the number of running processes
 int LinuxParser::RunningProcesses() {
-  string line, key;
-  int value, ProcsRunning;
+  string line; 
+  string key;
+  int value; 
+  int ProcsRunning{0};
   std::ifstream filestream(kProcDirectory + kStatFilename);
   if (filestream.is_open()) {
     while (getline(filestream, line)) {
@@ -238,7 +242,7 @@ string LinuxParser::User(int pid) {
 // REMOVE: [[maybe_unused]] once you define the function
 long LinuxParser::UpTime(int pid) {
   int counter = 0;
-  long up_time;
+  long up_time{0};
   string value;
   std::ifstream filestream(kProcDirectory + std::to_string(pid) + kStatFilename);
   if (filestream.is_open()) {
